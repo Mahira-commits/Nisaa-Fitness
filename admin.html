@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <span id="welcomeMessage"></span>
+        <button id="logoutBtn">Logout</button>
+    </header>
+
+    <main>
+        <!-- Session Creation Form -->
+        <section id="createSessionSection">
+            <h2>Create a New Session</h2>
+            <form id="createSessionForm">
+                <label for="sessionLocation">Location:</label>
+                <input type="text" id="sessionLocation" name="sessionLocation" placeholder="Enter location" required>
+
+                <label for="sessionSport">Sport:</label>
+                <select id="sessionSport" name="sessionSport" required>
+                    <option value="">Select Sport</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Netball">Netball</option>
+                </select>
+
+                <label for="sessionDateTime">Date and Time:</label>
+                <input type="datetime-local" id="sessionDateTime" name="sessionDateTime" required>
+
+                <button type="submit" id="createSessionBtn">Create Session</button>
+            </form>
+        </section>
+
+        <!-- Sessions List -->
+        <section id="sessionsListSection">
+            <h2>Existing Sessions</h2>
+            <div id="adminSessionList"></div>
+        </section>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="admin.js"></script>
+</body>
+</html>
